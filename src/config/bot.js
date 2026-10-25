@@ -470,9 +470,9 @@ export const botConfig = {
     voice: true,
     search: true,
     tools: true,
-    utility: true,
+    utility: false,
     community: true,
-    fun: true,
+    fun: false,
     music: true,
   },
 };
