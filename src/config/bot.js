@@ -462,16 +462,16 @@ export const botConfig = {
     counter: false,
 
     // Security and self-service systems.
-    verification: true,
+    verification: false,
     reactionRoles: true,
-    joinToCreate: true,
+    joinToCreate: false,
 
     // Utility/quality-of-life modules.
     voice: true,
-    search: true,
-    tools: true,
+    search: false,
+    tools: false,
     utility: false,
-    community: true,
+    community: false,
     fun: false,
     music: true,
   },
