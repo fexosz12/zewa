@@ -24,8 +24,8 @@ export const botConfig = {
     activities: [
       {
         name: "By Less❤︎", // required by Discord API, not shown in the client
-        state: "ofc trial bot",     // this is what people actually see
-        type: 0,               // Custom
+        state: "A little something from the heart",     // this is what people actually see
+        type: 4,               // Custom
       },
     ],
   },
