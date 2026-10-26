@@ -1,6 +1,3 @@
-
- // xpSystem.js
-
 import { wrapServiceBoundary } from '../../utils/errorHandler.js';
 
 // Completely disable XP and level-up notifications.
