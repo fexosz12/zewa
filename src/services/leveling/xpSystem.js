@@ -18,10 +18,8 @@ export const addXp = wrapServiceBoundary(async function addXp(client, guild, mem
       return null;
     }
 
-    const config = await getLevelingConfig(client, guild.id);
-
-    if (!config.enabled) {
-      return null;
+   // Leveling system is completely disabled.
+return null;
     }
 
     const levelData = await getUserLevelData(client, guild.id, member.user.id);
@@ -37,7 +35,7 @@ export const addXp = wrapServiceBoundary(async function addXp(client, guild, mem
     while (levelData.xp >= xpNeededForNextLevel && levelData.level < 1000) {
       levelData.xp -= xpNeededForNextLevel;
       levelData.level += 1;
-      didLevelUp = true;
+      didLevelUp = false;
       xpNeededForNextLevel = getXpForLevel(levelData.level);
 
       logger.info(`🎉 ${member.user.tag} leveled up to level ${levelData.level} in ${guild.name}`);
