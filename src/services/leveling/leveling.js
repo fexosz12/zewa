@@ -151,7 +151,7 @@ export async function getLevelingConfig(client, guildId) {
   try {
     const guildConfig = await getGuildConfig(client, guildId);
     return guildConfig.leveling || {
-      enabled: true,
+      enabled: false,
       xpPerMessage: { min: 15, max: 25 },
       xpCooldown: 20,
       levelUpMessage: '{user} has leveled up to level {level}!',
@@ -166,7 +166,7 @@ export async function getLevelingConfig(client, guildId) {
   } catch (error) {
     logger.error(`Error getting leveling config for guild ${guildId}:`, error);
     return {
-      enabled: true,
+      enabled: false,
       xpPerMessage: { min: 15, max: 25 },
       xpCooldown: 20,
       levelUpMessage: '{user} has leveled up to level {level}!',
@@ -303,7 +303,7 @@ export async function saveLevelingConfig(client, guildId, config) {
 export async function addLevels(client, guildId, userId, levels) {
   try {
     const levelingConfig = await getLevelingConfig(client, guildId);
-    if (!levelingConfig?.enabled) {
+    if (!levelingConfig?.false) {
       throw new TitanBotError(
         'Leveling system is disabled on this server',
         ErrorTypes.CONFIGURATION,
